@@ -22,6 +22,7 @@ const Mine = lazy(() => import('@/views/mine'))
 const Focus = lazy(() => import('@/views/focus'))
 const Download = lazy(() => import('@/views/download'))
 
+const Test = lazy(() => import('@/views/test'))
 // 路由配置
 const routes: RouteObject[] = [
   // 默认路由 - 重定向到 /discover
@@ -78,6 +79,11 @@ const routes: RouteObject[] = [
   {
     path: '/download',
     element: <Download />
+  },
+  // 测试页面
+  {
+    path: '/test',
+    element: <Test />
   }
 ]
 
