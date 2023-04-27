@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { memo, ReactNode } from 'react'
+import type { FC } from 'react'
 
-const Download = () => {
-  return <div>Download</div>
+interface IProps {
+  children?: ReactNode
 }
 
-export default Download
+const Download: FC<IProps> = () => {
+  return (
+    <div>
+      <h1>Download</h1>
+    </div>
+  )
+}
+
+export default memo(Download)
