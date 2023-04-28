@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import React, { memo, ReactNode } from 'react'
+import React, { memo, ReactNode, useEffect } from 'react'
 import type { FC } from 'react'
 
 interface IProps {
@@ -10,13 +10,26 @@ interface IProps {
 // import { shallowEqual } from 'react-redux'
 import { useAppSelector, useAppIDispatch, useShallowEqual } from '@/store'
 import { changeMessageAction } from '@/store/modules/counter'
+import request from '@/service'
 
 // 正确获取redux中的数据类型
 /* import store from '@/store'
 type GetStateFnType = typeof store.getState
 type IRootState = ReturnType<GetStateFnType> */
 
+// 测试网络请求
+
 const Test: FC<IProps> = () => {
+  // 测试网络请求
+  useEffect(() => {
+    request
+      .get({
+        url: '/banner'
+      })
+      .then((res) => {
+        console.log(res)
+      })
+  }, [])
   const { count, message, address } = useAppSelector(
     (state) => ({
       count: state.counter.count,
