@@ -18,9 +18,9 @@ const store = configureStore({
 // 导出store的类型
 type RootState = ReturnType<typeof store.getState>
 type AppDispatch = typeof store.dispatch
+
 // useAppSelector的Hook
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
-
 export const useAppIDispatch: () => AppDispatch = useDispatch
 export const useShallowEqual = shallowEqual
 
